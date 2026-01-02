@@ -5,8 +5,8 @@ const row = document.createElement("div");
 row.classList.add("row");
 
 function createGrid(size){
-    if (size < 1 || size > 100){
-        alert("Size must be between 1 and 100");
+    if (size < 1 || size > 100 || isNaN(size)){
+        alert("Size must be a number between 1 and 100");
         return;
     }
     container.innerHTML="";
@@ -19,10 +19,21 @@ function createGrid(size){
         container.appendChild(newRow);
         }
 }
-
+// Event listener to trigger grid creation with input
 const btn = document.querySelector("button");
 btn.addEventListener(("click"), () => {
-    const size = document.querySelector("input").value;
+    const size = prompt("Enter grid size (1-100):");
     createGrid(size);
 });
-createGrid(10);
+
+
+//Event listener for hover over cells
+const grid = document.querySelector("#container");
+grid.addEventListener("mouseover", (e) => {
+    e.target.classList.add("hovered");
+})
+grid.addEventListener("mouseout", (e) => {
+    e.target.classList.remove("hovered");
+})
+
+createGrid(10); //default grid size
