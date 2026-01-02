@@ -30,7 +30,11 @@ btn.addEventListener(("click"), () => {
 //Event listener for hover over cells
 const grid = document.querySelector("#container");
 grid.addEventListener("mouseover", (e) => {
-    e.target.style.backgroundColor = "black";
+    const r = Math.floor(Math.random() * 256);   
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    const color = "rgb(" + r + "," + g + "," + b + ")";
+    e.target.style.backgroundColor = color;
 })
 grid.addEventListener("mouseout", (e) => {
     e.target.style.backgroundColor = "white";
