@@ -5,7 +5,11 @@ const row = document.createElement("div");
 row.classList.add("row");
 
 function createGrid(size){
-   for (let i = 0; i<size; i++){
+    if (size < 1 || size > 100){
+        alert("Size must be between 1 and 100");
+        return;
+    }
+    for (let i = 0; i<size; i++){
         let newRow = row.cloneNode(true);
         for (let j = 0; j<size; j++){
             let newCell = cell.cloneNode(true);
@@ -14,4 +18,4 @@ function createGrid(size){
         container.appendChild(newRow);
         }
 }
-createGrid(3);
+createGrid(10);
