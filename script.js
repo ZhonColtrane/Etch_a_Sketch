@@ -18,4 +18,10 @@ function createGrid(size){
         container.appendChild(newRow);
         }
 }
+
+const btn = document.querySelector("button");
+btn.addEventListener(("click"), () => {
+    const size = document.querySelector("input").value;
+    createGrid(size);
+});
 createGrid(10);
