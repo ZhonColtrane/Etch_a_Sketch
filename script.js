@@ -30,10 +30,10 @@ btn.addEventListener(("click"), () => {
 //Event listener for hover over cells
 const grid = document.querySelector("#container");
 grid.addEventListener("mouseover", (e) => {
-    e.target.classList.add("hovered");
+    e.target.style.backgroundColor = "black";
 })
 grid.addEventListener("mouseout", (e) => {
-    e.target.classList.remove("hovered");
+    e.target.style.backgroundColor = "white";
 })
 
 createGrid(10); //default grid size
