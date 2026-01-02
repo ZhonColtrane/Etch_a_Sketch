@@ -9,6 +9,7 @@ function createGrid(size){
         alert("Size must be between 1 and 100");
         return;
     }
+    container.innerHTML="";
     for (let i = 0; i<size; i++){
         let newRow = row.cloneNode(true);
         for (let j = 0; j<size; j++){
